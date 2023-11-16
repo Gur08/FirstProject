@@ -33,7 +33,8 @@ public class GitHubController {
         GitHubUser hubUser = optionalUser.orElse((null));
         if (hubUser== null) {
 //            GitHubUser user = template.getForObject("https://api.github.com/users/"+userName,GitHubUser.class);
-            ResponseEntity<GitHubUser> forEntity = template.getForEntity("https://api.github.com/users/" + userName, GitHubUser.class);
+            ResponseEntity<GitHubUser> forEntity = template.getForEntity("https://api.github.com/users/"
+                    + userName, GitHubUser.class);
             if (null!=forEntity){
                repo.save(forEntity.getBody());
 
